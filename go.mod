@@ -1,4 +1,4 @@
-module github.com/umirode/echo-socket.io
+module github.com/motoki317/echo-socket.io
 
 go 1.13
 

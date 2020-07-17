@@ -3,8 +3,8 @@ package echo_socket_io_test
 import (
 	socketio "github.com/googollee/go-socket.io"
 	"github.com/labstack/echo/v4"
+	echo_socket_io "github.com/motoki317/echo-socket.io"
 	"github.com/stretchr/testify/assert"
-	echo_socket_io "github.com/umirode/echo-socket.io"
 	"testing"
 )
 

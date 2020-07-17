@@ -4,7 +4,7 @@ import (
 	"fmt"
 	socketio "github.com/googollee/go-socket.io"
 	"github.com/labstack/echo/v4"
-	esi "github.com/umirode/echo-socket.io"
+	esi "github.com/motoki317/echo-socket.io"
 )
 
 func main() {
