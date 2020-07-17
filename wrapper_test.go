@@ -57,7 +57,7 @@ func TestWrapper_OnError(t *testing.T) {
 	assert.NotNil(t, wrapper)
 	assert.Nil(t, err)
 
-	wrapper.OnError("", func(context echo.Context, e error) {
+	wrapper.OnError("", func(context echo.Context, conn socketio.Conn, e error) {
 
 	})
 }

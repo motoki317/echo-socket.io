@@ -11,7 +11,7 @@ import (
 type IWrapper interface {
 	OnConnect(nsp string, f func(echo.Context, socketio.Conn) error)
 	OnDisconnect(nsp string, f func(echo.Context, socketio.Conn, string))
-	OnError(nsp string, f func(echo.Context, error))
+	OnError(nsp string, f func(echo.Context, socketio.Conn, error))
 	OnEvent(nsp, event string, f func(echo.Context, socketio.Conn, string))
 	HandlerFunc(context echo.Context) error
 }
@@ -59,9 +59,9 @@ func (s *Wrapper) OnDisconnect(nsp string, f func(echo.Context, socketio.Conn, s
 }
 
 // On Socket.io error
-func (s *Wrapper) OnError(nsp string, f func(echo.Context, error)) {
-	s.Server.OnError(nsp, func(err error) {
-		f(s.Context, err)
+func (s *Wrapper) OnError(nsp string, f func(echo.Context, socketio.Conn, error)) {
+	s.Server.OnError(nsp, func(conn socketio.Conn, err error) {
+		f(s.Context, conn, err)
 	})
 }
 
